@@ -234,7 +234,17 @@ button:hover{opacity:0.85;}
 
 <script>
 
+
 let notices = JSON.parse(localStorage.getItem("notices")) || [];
+
+let newNotice = {
+    title: document.getElementById("title").value,
+    description: document.getElementById("description").value,
+    target: document.getElementById("target").value  // IMPORTANT
+};
+
+notices.push(newNotice);
+localStorage.setItem("notices", JSON.stringify(notices));
 
 /* NAVIGATION */
 function navigate(section){
@@ -532,3 +542,4 @@ function saveEdit(id){
 
 </body>
 </html>
+
