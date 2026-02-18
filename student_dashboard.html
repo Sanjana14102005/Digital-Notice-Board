@@ -581,10 +581,16 @@ el.style.display=categories[id]===0?"none":"inline-block";
 }
 
 
-/* Auto refresh every 2 minutes */
-function autoRefresh(){loadNotices(); renderNotices(notices);}
+/* AUTO REFRESH */
+function autoRefresh(){
+    loadNotices();
+    renderNotices(notices);
+    updateCategoryCounts();
+}
+
 setInterval(autoRefresh,120000);
 autoRefresh();
+
 function getFileIcon(file){
     if(!file) return "";
 
